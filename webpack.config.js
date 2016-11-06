@@ -11,9 +11,9 @@ module.exports = {
     metadata:METADATA,
     context: path.join(__dirname, '.'),
     entry: {
-        "vendor":path.resolve(""),
-        "polyfills":path.resolve(""),
-        "demo": path.resolve("")
+        "vendor":path.resolve("./src/vendor.js"),
+        "polyfills":path.resolve("./src/polyfills.js"),
+        "demo": path.resolve("./src/app/main.ts")
     },
     output: {
         path: path.resolve("./dist"),
@@ -51,12 +51,12 @@ module.exports = {
         },{
             test: /\.html$/,
             loader: 'raw-loader',
-            exclude:[path.resolve("src/index.html")]
+            exclude:[path.resolve("index.html")]
         }]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/index.html',
+            template: 'index.html',
             chunksSortMode: 'dependency'
         }),
         new CopyWebpackPlugin([{from: "src/public/"}]),
@@ -77,4 +77,3 @@ module.exports = {
     }
 
 };
-
