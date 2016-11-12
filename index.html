@@ -10,6 +10,8 @@
     <!-- base url -->
     <base href="<%= webpackConfig.metadata.baseUrl %>">
 
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 
     <% for (var css in htmlWebpackPlugin.files.css) { %>
     <link href="<%=htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">

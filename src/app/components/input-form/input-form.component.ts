@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 export class InputFormComponent {
     constructor() {
     }
+
+    types = ['String', 'Integer', 'Boolean'];
+
 }

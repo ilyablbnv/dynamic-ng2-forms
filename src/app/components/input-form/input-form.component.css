@@ -1,0 +1,19 @@
+.form-container {
+    padding: 200px;
+}
+
+.item-container {
+    margin-bottom: 20px;
+    padding: 30px;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+}
+
+.item-title {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.item-btn button {
+    float: right;
+}
