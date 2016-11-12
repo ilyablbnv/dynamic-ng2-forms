@@ -1,7 +1,9 @@
 .columns {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.column {
-    flex: 1;
+.main-form {
+    min-width: 50%;
 }

@@ -3,8 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
-import { InputFormComponent } from "./components/input-form/input-form.component";
-import { OutputFormComponent } from "./components/output-form/output-form.component";
+import { FormComponent } from "./components/form/form.component";
 
 @NgModule({
     imports: [
@@ -13,8 +12,7 @@ import { OutputFormComponent } from "./components/output-form/output-form.compon
     ],
     declarations: [
         AppComponent,
-        InputFormComponent,
-        OutputFormComponent
+        FormComponent,
     ],
     bootstrap: [
         AppComponent

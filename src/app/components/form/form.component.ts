@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Parameter } from "../../shared/parameter.model";
 
 @Component({
-    selector: 'input-form',
-    template: require("./input-form.component.html"),
-    styles: [require("./input-form.component.css")]
+    selector: 'main-form',
+    template: require("./form.component.html"),
+    styles: [require("./form.component.css")]
 })
-export class InputFormComponent {
+
+export class FormComponent {
     paramsList: Array<Parameter>;
     types: Array<string> = ['String', 'Integer', 'Boolean'];
     empty: boolean = true;
@@ -31,5 +32,8 @@ export class InputFormComponent {
 
     deleteParam(index) {
         this.paramsList.splice(index, 1);
+        if(this.paramsList.length === 0) {
+            this.empty = true;
+        }
     }
 }
