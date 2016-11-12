@@ -15,5 +15,14 @@
 }
 
 .item-btn button {
+    margin-left: 5px;
     float: right;
+}
+
+.item-param-delete-btn button {
+    margin-bottom: 5px;
+    float: right;
+    color: #fff;
+    background-color: #d9534f;
+    border: none #d43f3a;
 }
