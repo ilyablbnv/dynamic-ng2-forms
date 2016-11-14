@@ -11,6 +11,7 @@ export class FormComponent {
     paramsList: Array<Parameter>;
     types: Array<string> = ['String', 'Integer', 'Boolean'];
     empty: boolean = true;
+    editMode: boolean = true;
 
     constructor() {
         this.paramsList = [];
@@ -25,9 +26,17 @@ export class FormComponent {
         this.empty = false;
     }
 
-    clearForm() {
-        this.paramsList.length = 0;
-        this.empty = true;
+    //clearForm() {
+    //    this.paramsList.length = 0;
+    //    this.empty = true;
+    //}
+
+    switchToPreview() {
+        this.editMode = false;
+    }
+
+    switchToEdit() {
+        this.editMode = true;
     }
 
     deleteParam(index) {
