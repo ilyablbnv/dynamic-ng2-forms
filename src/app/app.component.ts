@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { FormComponent } from './components/item/form/form.component';
+import { FormComponent } from './components/item-form/forms/form.component';
 
 @Component({
-    selector: 'main-app',
+    selector: 'app',
     template: require("./app.component.html"),
     styles: [require("./app.component.css")]
 })

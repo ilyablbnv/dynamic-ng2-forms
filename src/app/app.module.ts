@@ -3,8 +3,10 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
-import { FormComponent } from "./components/item/form/form.component";
-import { ItemComponent } from "./components/item/item.component";
+import { ItemFormComponent } from "./components/item-form/item-form.component";
+import { MetaFormComponent } from "./components/item-form/meta-form/meta-form.component";
+import { SaveFormComponent } from "./components/item-form/save-form/save-form.component";
+import { FormComponent } from "./components/item-form/forms/form.component";
 
 @NgModule({
     imports: [
@@ -13,8 +15,10 @@ import { ItemComponent } from "./components/item/item.component";
     ],
     declarations: [
         AppComponent,
+        ItemFormComponent,
         FormComponent,
-        ItemComponent
+        MetaFormComponent,
+        SaveFormComponent
     ],
     bootstrap: [
         AppComponent
