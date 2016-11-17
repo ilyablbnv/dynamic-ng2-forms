@@ -26,11 +26,6 @@ export class FormComponent {
         this.empty = false;
     }
 
-    //clearForm() {
-    //    this.paramsList.length = 0;
-    //    this.empty = true;
-    //}
-
     switchToPreview() {
         this.editMode = false;
     }
