@@ -6,9 +6,14 @@ import { Component, OnInit } from '@angular/core';
     styles: [require("./save-form.component.css")]
 })
 export class SaveFormComponent implements OnInit {
+    private schema: any = {
+    'properties': {}
+    };
+
     constructor() {
     }
 
     ngOnInit() {
+
     }
 }

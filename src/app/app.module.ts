@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
+import { SchemaFormModule, WidgetRegistry, DefaultWidgetRegistry } from "angular2-schema-form";
 
 import { AppComponent } from "./app.component";
 import { ItemFormComponent } from "./components/item-form/item-form.component";
@@ -11,7 +12,8 @@ import { FormComponent } from "./components/item-form/forms/form.component";
 @NgModule({
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        SchemaFormModule
     ],
     declarations: [
         AppComponent,
@@ -20,6 +22,7 @@ import { FormComponent } from "./components/item-form/forms/form.component";
         MetaFormComponent,
         SaveFormComponent
     ],
+    providers: [{provide: WidgetRegistry, useClass: DefaultWidgetRegistry}],
     bootstrap: [
         AppComponent
     ]
