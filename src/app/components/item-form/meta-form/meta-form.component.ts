@@ -7,15 +7,9 @@ import { Parameter } from "../../../shared/models/parameter.model";
     styles: [require("./meta-form.component.css")]
 })
 export class MetaFormComponent implements OnInit {
-    types: Array<string> = ['String', 'Integer', 'Boolean'];
-    paramsList: Array<Parameter>;
+    //types: Array<string> = ['String', 'Integer', 'Boolean'];
 
     constructor() {
-        this.paramsList = [];
-    }
-
-    addParam() {
-        this.paramsList.push(new Parameter('', this.types[0])); // Set default type to a 'String'
     }
 
     ngOnInit() {
