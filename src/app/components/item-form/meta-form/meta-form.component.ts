@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Parameter } from "../../../shared/models/parameter.model";
+import { Parameter } from "../../../shared/parameter.interface.ts";
 
 @Component({
     selector: 'meta-form',
