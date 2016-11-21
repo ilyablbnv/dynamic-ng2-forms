@@ -1,21 +1,38 @@
-<!--<div *ngFor="let param of paramsList; let i=index">-->
-    <!--<div class="item-action-btns clearfix">-->
-        <!--<button class="fa fa-times btn-danger delete-btn" (click)="deleteParam(i)"></button>-->
-    <!--</div>-->
-    <!--<div class="form-group">-->
-        <!--<label class="col-sm-2 control-label">Název</label>-->
-        <!--<div class="col-sm-10">-->
-            <!--<input type="text" required class="form-control" [(ngModel)]="param.name" name="{{'name'+i}}" pattern="^[^-\s][a-zA-Z0-9_\s-]+$" placeholder="Name">-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="form-group">-->
-        <!--<label class="col-sm-2 control-label">Typ</label>-->
-        <!--<div class="col-sm-10">-->
-            <!--<select class="form-control" required [(ngModel)]="param.type" name="{{'type'+i}}">-->
-                <!--<option *ngFor="let type of types" [value]="type">{{type}}</option>-->
-            <!--</select>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<hr>-->
-<!--</div>-->
-<!--<button class="btn btn-primary" (click)="addParam()">Add parameter</button>-->
+<form [formGroup]="metaForm" novalidate>
+    <!--params-->
+    <div formArrayName="params">
+        <div *ngFor="let param of metaForm.controls.params.controls; let i=index" class="panel panel-default">
+            <div class="panel-heading">
+                <span>Parameter {{i + 1}}</span>
+                <i style="cursor: pointer" class="fa fa-times pull-right" *ngIf="metaForm.controls.params.controls.length > 1" (click)="removeParam(i)"></i>
+            </div>
+            <div class="panel-body" [formGroupName]="i">
+                <!--description-->
+                <div class="form-group col-xs-6">
+                    <label>Name</label>
+                    <input class="form-control" type="text" formControlName="description">
+                    <!--display error message if street is not valid-->
+                    <small [hidden]="metaForm.controls.params.controls[i].controls.description.valid" class="text-danger">
+                        Name is required
+                    </small>
+                </div>
+                <!--type-->
+                <div class="form-group col-xs-6">
+                    <label>Type</label>
+                    <input class="form-control" type="text" formControlName="type">
+                    <small [hidden]="metaForm.controls.params.controls[i].controls.type.valid" class="text-danger">
+                        Type is required
+                    </small>
+                </div>
+            </div>
+
+            <div class="margin-20">
+                <a style="cursor: pointer" (click)="addParam()">Add another parameter +</a>
+            </div>
+
+        </div>
+        <div class="margin-20">
+            <pre>form value: <br>{{metaForm.value | json}}</pre>
+        </div>
+    </div>
+</form>

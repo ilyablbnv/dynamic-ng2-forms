@@ -1,9 +1,7 @@
-<form class="form-horizontal" #itemForm="ngForm">
-    <div [hidden]="empty">{{diagnostic}}</div>
-    <!-- Item -->
+<!-- Item -->
     <div class="item-container">
         <div class="item">
-            <div class="item-title col-sm-12">Trubka</div>
+            <div class="item-title">Trubka</div>
 
             <!-- Edit mode -->
             <div *ngIf="editMode">
@@ -16,19 +14,13 @@
             </div>
 
             <div class="item-btn clearfix">
-                <div class="item-param-add-btn" *ngIf="editMode">
-                    <button class="btn btn-primary btn-sm" (click)="addParam()">Přidat parameter</button>
-                </div>
-
                 <div class="item-edit-btn" *ngIf="!empty && !editMode">
-                    <button class="btn btn-success btn-sm" (click)="switchToPreview()">Uložit</button>
                     <button class="btn btn-warning btn-sm" (click)="switchToEdit()">Editovat</button>
                 </div>
 
                 <div class="item-edit-btn" *ngIf="!empty && editMode">
-                    <button class="btn btn-warning btn-sm" [disabled]="!itemForm.form.valid" (click)="switchToPreview()">Náhled</button>
+                    <button class="btn btn-warning btn-sm" (click)="switchToPreview()">Náhled</button>
                 </div>
             </div>
         </div>
     </div>
-</form>
