@@ -1,15 +1,18 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SharedService } from "../../../shared/shared.service";
+
+import 'rxjs/Rx';
 
 @Component({
     selector: 'save-form',
     template: require("./save-form.component.html"),
-    styles: [require("./save-form.component.css")]
+    styles: [require("./save-form.component.css")],
 })
 export class SaveFormComponent implements OnInit {
-    @Input() schema;
+    schema: string[];
 
-    constructor() {
-        console.log(this.schema);
+    constructor(private sharedService: SharedService) {
+        sharedService.metaData$.subscribe((res) => this.schema = res);
     }
 
     ngOnInit() {

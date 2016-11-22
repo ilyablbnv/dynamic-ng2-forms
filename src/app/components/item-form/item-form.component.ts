@@ -6,20 +6,16 @@ import { Component, OnInit } from '@angular/core';
     styles: [require("./item-form.component.css")]
 })
 export class ItemFormComponent implements OnInit {
-    editMode: boolean;
+    isOpened: boolean;
 
     constructor() {
-        this.editMode = true;
+        this.isOpened = false;
     }
 
     ngOnInit() {
     }
 
-    switchToPreview() {
-        this.editMode = false;
-    }
-
-    switchToEdit() {
-        this.editMode = true;
+    toogleMetaForm() {
+        this.isOpened = !this.isOpened;
     }
 }

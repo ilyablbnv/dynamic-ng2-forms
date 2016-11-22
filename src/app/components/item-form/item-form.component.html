@@ -1,26 +1,21 @@
 <!-- Item -->
     <div class="item-container">
         <div class="item">
-            <div class="item-title">Trubka</div>
+            <div class="item-header">
+                <span class="item-title">Trubka</span>
+                <i class="fa" [ngClass]="isOpened ? 'fa-arrow-up' : 'fa-arrow-down'" (click)="toogleMetaForm()"></i>
+            </div>
+
 
             <!-- Edit mode -->
-            <div *ngIf="editMode">
+            <div *ngIf="isOpened">
                 <meta-form></meta-form>
             </div>
 
             <!--Preview mode-->
-            <div *ngIf="!editMode">
+            <div>
                 <save-form></save-form>
             </div>
 
-            <div class="item-btn clearfix">
-                <div class="item-edit-btn" *ngIf="!empty && !editMode">
-                    <button class="btn btn-warning btn-sm" (click)="switchToEdit()">Editovat</button>
-                </div>
-
-                <div class="item-edit-btn" *ngIf="!empty && editMode">
-                    <button class="btn btn-warning btn-sm" (click)="switchToPreview()">Náhled</button>
-                </div>
-            </div>
         </div>
     </div>
