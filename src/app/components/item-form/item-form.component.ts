@@ -6,16 +6,8 @@ import { Component, OnInit } from '@angular/core';
     styles: [require("./item-form.component.css")]
 })
 export class ItemFormComponent implements OnInit {
-    isOpened: boolean;
 
-    constructor() {
-        this.isOpened = false;
-    }
+    constructor() { }
 
-    ngOnInit() {
-    }
-
-    toogleMetaForm() {
-        this.isOpened = !this.isOpened;
-    }
+    ngOnInit() { }
 }

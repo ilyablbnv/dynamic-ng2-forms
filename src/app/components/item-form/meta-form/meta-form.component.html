@@ -8,7 +8,7 @@
             </div>
             <div class="panel-body" [formGroupName]="i">
                 <!--description-->
-                <div class="form-group col-xs-6">
+                <div class="form-group col-lg-6">
                     <label>Name</label>
                     <input class="form-control" type="text" formControlName="description">
                     <!--display error message if street is not valid-->
@@ -17,7 +17,7 @@
                     </small>
                 </div>
                 <!--type-->
-                <div class="form-group col-xs-6">
+                <div class="form-group col-lg-6">
                     <label>Type</label>
                     <select class="form-control" formControlName="type">
                         <option *ngFor="let type of types" [ngValue]="type">{{type}}</option>
@@ -28,14 +28,14 @@
                 </div>
             </div>
 
-            <div class="margin-20">
+            <div class="btn-add-param">
                 <a style="cursor: pointer" (click)="addParam()">Add another parameter +</a>
             </div>
 
         </div>
-        <div class="margin-20">
+        <div class="clearfix">
             <!--<pre>form value: <br>{{metaForm.value | json}}</pre>-->
-            <button class="btn btn-primary btn-xs" [disabled]="!metaForm.valid" (click)="sendJSON()">Send Json</button>
+            <button class="btn btn-warning btn-xs btn-send pull-right" [disabled]="!metaForm.valid" (click)="sendJSON()">Send Json</button>
         </div>
     </div>
 </form>

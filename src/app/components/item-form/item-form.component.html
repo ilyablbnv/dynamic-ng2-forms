@@ -3,21 +3,16 @@
     <div class="item">
         <div class="item-header">
             <span class="item-title">Trubka</span>
-            <button class="btn btn-primary btn-xs" (click)="toogleMetaForm()">
-                <i class="fa" [ngClass]="isOpened ? 'fa-angle-up' : 'fa-angle-down'"></i>
-            </button>
         </div>
 
+        <div class="form-container">
+            <div>
+                <meta-form></meta-form>
+            </div>
 
-        <!-- Edit mode -->
-        <div *ngIf="isOpened">
-            <meta-form></meta-form>
+            <div>
+                <save-form></save-form>
+            </div>
         </div>
-
-        <!--Preview mode-->
-        <div>
-            <save-form></save-form>
-        </div>
-
     </div>
 </div>

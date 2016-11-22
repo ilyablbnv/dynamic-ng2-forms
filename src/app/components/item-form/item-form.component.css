@@ -1,6 +1,6 @@
 .item-container {
-    margin: 100px;
-    padding: 30px;
+    margin-top: 100px;
+    padding: 20px;
     background-color: #f7f7f9;
     border: 1px solid #e1e1e8;
 }
@@ -9,34 +9,27 @@
     margin-bottom: 20px;
 }
 
-.item-header .fa {
-    color: #ffffff;
-    font-size: 1.5em;
-}
-
 .item-title {
     margin-right: 5px;
     padding-top: 5px;
     font-size: 1.5em;
 }
 
-.item-btn button {
-    margin-left: 5px;
-    float: right;
+.form-container {
+    display: flex;
+    width: 100%;
 }
 
-.item-action-btns button {
-    margin: 0 0 5px 5px;
-    float: right;
-    border-style: none;
+.form-container > div {
+    flex: 1;
 }
 
-/* Replace */
+.form-container > div {
+    flex: 1;
+}
 
-/*.ng-valid[required], .ng-valid.required  {*/
-/*border-left: 5px solid #42A948; !* green *!*/
-/*}*/
+.form-container > div:not(:last-child) {
+    margin-right: 20px;
+}
 
-/*.ng-invalid:not(form)  {*/
-/*border-left: 5px solid #a94442; !* red *!*/
-/*}*/
+

@@ -4,6 +4,6 @@
     justify-content: center;
 }
 
-.main-form {
-    min-width: 50%;
+.column {
+    min-width: 65%;
 }
