@@ -19,7 +19,9 @@
                 <!--type-->
                 <div class="form-group col-xs-6">
                     <label>Type</label>
-                    <input class="form-control" type="text" formControlName="type">
+                    <select class="form-control" formControlName="type">
+                        <option *ngFor="let type of types" [ngValue]="type">{{type}}</option>
+                    </select>
                     <small [hidden]="metaForm.controls.params.controls[i].controls.type.valid" class="text-danger">
                         Type is required
                     </small>
@@ -32,8 +34,8 @@
 
         </div>
         <div class="margin-20">
-            <pre>form value: <br>{{metaForm.value | json}}</pre>
-            <button class="btn btn-primary" (click)="sendJSON()">Send Json</button>
+            <!--<pre>form value: <br>{{metaForm.value | json}}</pre>-->
+            <button class="btn btn-primary btn-xs" [disabled]="!metaForm.valid" (click)="sendJSON()">Send Json</button>
         </div>
     </div>
 </form>

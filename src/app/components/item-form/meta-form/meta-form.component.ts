@@ -12,6 +12,8 @@ import { SharedService } from "../../../shared/shared.service";
 export class MetaFormComponent implements OnInit {
     public metaForm: FormGroup;
 
+    public types: string[] = ['string', 'boolean', 'number'];
+
     constructor(private _fb: FormBuilder, private sharedService: SharedService) { }
 
     ngOnInit() {

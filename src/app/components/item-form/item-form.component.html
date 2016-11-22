@@ -1,21 +1,23 @@
 <!-- Item -->
-    <div class="item-container">
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">Trubka</span>
-                <i class="fa" [ngClass]="isOpened ? 'fa-arrow-up' : 'fa-arrow-down'" (click)="toogleMetaForm()"></i>
-            </div>
-
-
-            <!-- Edit mode -->
-            <div *ngIf="isOpened">
-                <meta-form></meta-form>
-            </div>
-
-            <!--Preview mode-->
-            <div>
-                <save-form></save-form>
-            </div>
-
+<div class="item-container">
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">Trubka</span>
+            <button class="btn btn-primary btn-xs" (click)="toogleMetaForm()">
+                <i class="fa" [ngClass]="isOpened ? 'fa-angle-up' : 'fa-angle-down'"></i>
+            </button>
         </div>
+
+
+        <!-- Edit mode -->
+        <div *ngIf="isOpened">
+            <meta-form></meta-form>
+        </div>
+
+        <!--Preview mode-->
+        <div>
+            <save-form></save-form>
+        </div>
+
     </div>
+</div>

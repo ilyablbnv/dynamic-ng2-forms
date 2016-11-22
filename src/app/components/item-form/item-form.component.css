@@ -5,14 +5,19 @@
     border: 1px solid #e1e1e8;
 }
 
-.item-title {
+.item-header {
     margin-bottom: 20px;
-    margin-right: 5px;
-    font-size: 1.5em;
 }
 
 .item-header .fa {
-    color: #337ab7;
+    color: #ffffff;
+    font-size: 1.5em;
+}
+
+.item-title {
+    margin-right: 5px;
+    padding-top: 5px;
+    font-size: 1.5em;
 }
 
 .item-btn button {
@@ -29,9 +34,9 @@
 /* Replace */
 
 /*.ng-valid[required], .ng-valid.required  {*/
-    /*border-left: 5px solid #42A948; !* green *!*/
+/*border-left: 5px solid #42A948; !* green *!*/
 /*}*/
 
 /*.ng-invalid:not(form)  {*/
-    /*border-left: 5px solid #a94442; !* red *!*/
+/*border-left: 5px solid #a94442; !* red *!*/
 /*}*/
