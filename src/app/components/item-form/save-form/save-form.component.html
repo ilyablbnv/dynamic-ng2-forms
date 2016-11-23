@@ -1,4 +1,3 @@
 <!-- Insert schema there -->
-<!--<schema-form [schema]="schema"></schema-form>-->
-
-<div>{{schema | json}}</div>
+<schema-form [schema]="schema" (onChange)="val=$event.value"></schema-form>
+{{val | json}}

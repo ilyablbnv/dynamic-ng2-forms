@@ -18,7 +18,7 @@ export class MetaFormComponent implements OnInit {
 
     ngOnInit() {
         this.metaForm = this._fb.group({
-            params: this._fb.array([
+            properties: this._fb.array([
                 this.initParam(),
             ])
         })
@@ -33,17 +33,16 @@ export class MetaFormComponent implements OnInit {
     }
 
     addParam(): void {
-        const control = <FormArray>this.metaForm.controls['params'];
+        const control = <FormArray>this.metaForm.controls['properties'];
         control.push(this.initParam());
     }
 
     removeParam(i: number) {
-        const control = <FormArray>this.metaForm.controls['params'];
+        const control = <FormArray>this.metaForm.controls['properties'];
         control.removeAt(i);
     }
 
     sendJSON() {
-        let json = JSON.stringify(this.metaForm.value);
-        this.sharedService.MetaData(json);
+        this.sharedService.MetaData(this.metaForm.value);
     }
 }

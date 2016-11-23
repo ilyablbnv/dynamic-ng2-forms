@@ -4,3 +4,11 @@
 .btn-add-param {
     margin: 0 0 15px 15px;
 }
+
+.btn-add-param > a {
+    cursor: pointer;
+}
+
+.btn-close {
+    cursor: pointer;
+}

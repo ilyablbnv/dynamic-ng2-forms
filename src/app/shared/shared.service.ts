@@ -4,7 +4,7 @@ import { Subject }  from 'rxjs/Subject';
 @Injectable()
 export class SharedService {
 
-    private metaData = new Subject<string[]>();
+    private metaData = new Subject<string>();
     metaData$ = this.metaData.asObservable();
 
     MetaData(jsonData) {

@@ -1,10 +1,10 @@
 <form [formGroup]="metaForm" novalidate>
     <!--params-->
-    <div formArrayName="params">
-        <div *ngFor="let param of metaForm.controls.params.controls; let i=index" class="panel panel-default">
+    <div formArrayName="properties">
+        <div *ngFor="let param of metaForm.controls.properties.controls; let i=index" class="panel panel-default">
             <div class="panel-heading">
                 <span>Parameter {{i + 1}}</span>
-                <i style="cursor: pointer" class="fa fa-times pull-right" *ngIf="metaForm.controls.params.controls.length > 1" (click)="removeParam(i)"></i>
+                <i class="fa fa-times btn-close pull-right" *ngIf="metaForm.controls.properties.controls.length > 1" (click)="removeParam(i)"></i>
             </div>
             <div class="panel-body" [formGroupName]="i">
                 <!--description-->
@@ -12,7 +12,7 @@
                     <label>Name</label>
                     <input class="form-control" type="text" formControlName="description">
                     <!--display error message if street is not valid-->
-                    <small [hidden]="metaForm.controls.params.controls[i].controls.description.valid" class="text-danger">
+                    <small [hidden]="metaForm.controls.properties.controls[i].controls.description.valid" class="text-danger">
                         Name is required
                     </small>
                 </div>
@@ -22,19 +22,19 @@
                     <select class="form-control" formControlName="type">
                         <option *ngFor="let type of types" [ngValue]="type">{{type}}</option>
                     </select>
-                    <small [hidden]="metaForm.controls.params.controls[i].controls.type.valid" class="text-danger">
+                    <small [hidden]="metaForm.controls.properties.controls[i].controls.type.valid" class="text-danger">
                         Type is required
                     </small>
                 </div>
             </div>
 
             <div class="btn-add-param">
-                <a style="cursor: pointer" (click)="addParam()">Add another parameter +</a>
+                <a (click)="addParam()">Add another parameter +</a>
             </div>
 
         </div>
         <div class="clearfix">
-            <!--<pre>form value: <br>{{metaForm.value | json}}</pre>-->
+            <pre>{{metaForm.value | json}}</pre>
             <button class="btn btn-warning btn-xs btn-send pull-right" [disabled]="!metaForm.valid" (click)="sendJSON()">Send Json</button>
         </div>
     </div>

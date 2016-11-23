@@ -9,12 +9,20 @@ import 'rxjs/Rx';
     styles: [require("./save-form.component.css")],
 })
 export class SaveFormComponent implements OnInit {
-    schema: string[];
+    private schema:any = {
+        'properties': {}
+    };
+
+    //private schema: string;
 
     constructor(private sharedService: SharedService) {
-        sharedService.metaData$.subscribe((res) => this.schema = res);
+        sharedService.metaData$.subscribe(res => {
+            let schema = res;
+            this.schema = schema;
+        });
+    }
+    ngOnInit(): void {
     }
 
-    ngOnInit() {
-    }
+
 }
