@@ -1,0 +1,12 @@
+{
+  "properties": [
+    {
+      "description": "Delka",
+      "type": "number"
+    },
+    {
+      "description": "Sirka",
+      "type": "string"
+    }
+  ]
+}

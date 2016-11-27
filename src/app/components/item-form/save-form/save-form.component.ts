@@ -14,20 +14,6 @@ export class SaveFormComponent implements OnInit {
 
     constructor() {}
 
-    mySchema = {
-        "properties": [
-            {
-                "description": "dszdis",
-                "type": "boolean"
-            },
-            {
-                "description": "sdasd",
-                "type": "string"
-            }
-        ]
-    }
-
-
     ngOnInit() { }
 
 
