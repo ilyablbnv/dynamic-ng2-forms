@@ -7,7 +7,6 @@ import { AppComponent } from "./app.component";
 import { ItemFormComponent } from "./components/item-form/item-form.component";
 import { MetaFormComponent } from "./components/item-form/meta-form/meta-form.component";
 import { SaveFormComponent } from "./components/item-form/save-form/save-form.component";
-import { SharedService } from "./shared/shared.service";
 
 @NgModule({
     imports: [
@@ -22,7 +21,7 @@ import { SharedService } from "./shared/shared.service";
         MetaFormComponent,
         SaveFormComponent
     ],
-    providers: [SharedService, {provide: WidgetRegistry, useClass: DefaultWidgetRegistry}],
+    providers: [{provide: WidgetRegistry, useClass: DefaultWidgetRegistry}],
     bootstrap: [
         AppComponent
     ]

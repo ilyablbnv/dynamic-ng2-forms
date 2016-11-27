@@ -1,3 +1,7 @@
 <!-- Insert schema there -->
 <schema-form [schema]="schema" (onChange)="val=$event.value"></schema-form>
 {{val | json}}
+
+<div>
+    <button class="btn btn-success btn-xs pull-right">Save</button>
+</div>

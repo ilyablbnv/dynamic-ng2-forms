@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SharedService } from "../../../shared/shared.service";
 
 import 'rxjs/Rx';
 
@@ -9,20 +8,27 @@ import 'rxjs/Rx';
     styles: [require("./save-form.component.css")],
 })
 export class SaveFormComponent implements OnInit {
-    private schema:any = {
+    private schema: any = {
         'properties': {}
     };
 
-    //private schema: string;
+    constructor() {}
 
-    constructor(private sharedService: SharedService) {
-        sharedService.metaData$.subscribe(res => {
-            let schema = res;
-            this.schema = schema;
-        });
+    mySchema = {
+        "properties": [
+            {
+                "description": "dszdis",
+                "type": "boolean"
+            },
+            {
+                "description": "sdasd",
+                "type": "string"
+            }
+        ]
     }
-    ngOnInit(): void {
-    }
+
+
+    ngOnInit() { }
 
 
 }

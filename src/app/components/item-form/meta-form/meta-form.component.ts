@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 
 import { Parameter } from "../../../shared/parameter.interface";
-import { SharedService } from "../../../shared/shared.service";
 
 @Component({
     selector: 'meta-form',
@@ -14,7 +13,7 @@ export class MetaFormComponent implements OnInit {
 
     public types: string[] = ['string', 'boolean', 'number'];
 
-    constructor(private _fb: FormBuilder, private sharedService: SharedService) { }
+    constructor(private _fb: FormBuilder) { }
 
     ngOnInit() {
         this.metaForm = this._fb.group({
@@ -43,6 +42,6 @@ export class MetaFormComponent implements OnInit {
     }
 
     sendJSON() {
-        this.sharedService.MetaData(this.metaForm.value);
+
     }
 }
